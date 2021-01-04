@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+function FavoriteIdol({ favname }) {
+  return <h2>I love {favname} </h2>;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Helloooo!</h1>
+      <FavoriteIdol
+        favname="Futaba Anzu"
+        lovely={true}
+        point={[
+          'cute eye',
+          'cute voice',
+          'kawaiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii',
+        ]}
+      />
+      <FavoriteIdol favname="Abe Nana" />
+      <FavoriteIdol favname="Shimamura Uzuki" />
+      <FavoriteIdol favname="Shibuya Rin" />
+      <FavoriteIdol favname="Yumemi Riamu" />
     </div>
   );
 }
