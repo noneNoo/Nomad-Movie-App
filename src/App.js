@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Movie from './Movie';
 
 class App extends React.Component {
   state = {
@@ -13,7 +14,7 @@ class App extends React.Component {
         data: { movies },
       },
     } = await axios.get(
-      'https://yts-proxy.nomadcoders1.now.sh/list_movies.json'
+      'https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by=rating'
     );
     // this.setState({ movies: movies });
     this.setState({ movies, isLodaing: false });
@@ -23,8 +24,27 @@ class App extends React.Component {
     this.getMovies();
   }
   render() {
-    const { isLodaing } = this.state;
-    return <div>{isLodaing ? 'Loading...' : 'We are ready'}</div>;
+    const { isLodaing, movies } = this.state;
+    return (
+      <div>
+        {isLodaing
+          ? 'Loading...'
+          : movies.map((movie) => {
+              // console은 찍히는데... 왜 Movie 컴포넌트에 적용이 안 되는 건지 모르겠음...!
+              console.log(movie.title);
+              return (
+                <Movie
+                  key={movie.id}
+                  id={movie.id}
+                  year={movie.year}
+                  title={movie.title}
+                  summary={movie.summary}
+                  poster={movie.medium_cover_image}
+                />
+              );
+            })}
+      </div>
+    );
   }
 }
 
