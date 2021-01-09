@@ -46,6 +46,7 @@ body,
 }
 
 .movies .movie {
+  transition: 0.5s;
   text-decoration: none;
   width: 45%;
   height: 450px;
@@ -68,6 +69,7 @@ body,
 }
 
 .movie img {
+  transition: 0.5s;
   position: relative;
   top: -50px;
   max-width: 150px;
@@ -106,8 +108,63 @@ body,
 }
 
 .movie__genres li {
-  border: 1px solid lightgray;
   border-radius: 100px;
   margin-top: 5px;
   padding: 0 5px;
+  padding-bottom: 2px;
+}
+
+/*-- Genres Coloring --*/
+
+.Reality-TV,
+.Talk-Show,
+.Documentary,
+.History {
+  color: green;
+  border: 1px solid green;
+}
+
+.Romance,
+.Family,
+.Comedy,
+.Drama,
+.Biography {
+  color: rgb(223, 160, 170);
+  border: 1px solid rgb(223, 160, 170);
+}
+
+.Thriller,
+.Adventure,
+.Mystery {
+  color: purple;
+  border: 1px solid purple;
+}
+
+.Action,
+.Sci-Fi,
+.Crime {
+  color: rgb(255, 70, 70);
+  border: 1px solid rgb(255, 70, 70);
+}
+
+.Musical,
+.Fantasy {
+  color: orange;
+  border: 1px solid orange;
+}
+
+@media (max-width: 1180px) {
+  .movies .movie {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie__container {
+    flex-direction: column;
+  }
+  .movie__container img {
+    margin: 0 auto;
+  }
 }
