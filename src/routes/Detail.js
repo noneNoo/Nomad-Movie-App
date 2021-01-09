@@ -1,4 +1,5 @@
 import React from 'react';
+import './Detail.css';
 
 // function Detail({ location }) {
 //   console.log(location);
@@ -15,10 +16,17 @@ class Detail extends React.Component {
     }
   }
   render() {
+    console.log(this.props);
     const { location } = this.props;
 
     if (location.state) {
-      return <span>{location.state.title}</span>;
+      return (
+        <main>
+          <img src={location.state.poster}></img>
+          <h2>{location.state.title}</h2>
+          <p>{location.state.summary}</p>
+        </main>
+      );
     } else {
       return null;
     }

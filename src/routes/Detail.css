@@ -1,0 +1,13 @@
+main {
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 3rem;
+  padding: 4rem 2rem;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+main img {
+  width: max-content;
+}

@@ -17,6 +17,7 @@ function Movie({ id, year, title, summary, poster, genres }) {
     // 클릭하면 movie-detail 페이지로 이동됨과 동시에
     // 클릭한 컴포넌트의 props를 전달할 수 있다
     <Link
+      className="movie"
       to={{
         pathname: `/movie/${id}`,
         state: {
@@ -28,7 +29,7 @@ function Movie({ id, year, title, summary, poster, genres }) {
         },
       }}
     >
-      <div className="movie">
+      <div>
         <img src={poster} alt={title} title={title}></img>
         <div className="movie__data">
           <h3 className="movie__title">{title}</h3>

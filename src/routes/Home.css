@@ -14,9 +14,6 @@ ul {
   padding: 0;
 }
 
-li {
-}
-
 html,
 body,
 #potato,
@@ -45,6 +42,7 @@ body,
 }
 
 .movies .movie {
+  text-decoration: none;
   width: 45%;
   background-color: white;
   margin-bottom: 70px;
